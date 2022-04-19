@@ -1,0 +1,9 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.container-fluid{
+	width: 100%;
+	max-width:1172px;
+	margin: 0 auto;
+}

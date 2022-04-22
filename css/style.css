@@ -42,6 +42,7 @@ body{
     background:#050505;
     scroll-behavior: smooth;
     overflow:hidden;
+    overflow-x: hidden;
     width: 100%;
     height: 100vh;
     color:rgb(235, 235, 235);
@@ -246,19 +247,181 @@ a{
 }
 
 .opacity-scroll.reveal{
-    animation: revealImgAnimation 1.3s ease forwards;
+    animation: opacityscroll 1s ease forwards;
 }
 
+@keyframes opacityscroll {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+
+}
 .heading{
     width:100%;
     padding:20px;
-    margin:20px;
+    margin-top:20px;
+    margin-bottom:20px;
     font-size: 50px;
     text-align: center;
     font-family: made;
     color:transparent;
     -webkit-text-stroke: 1px rgb(235, 235, 235);
     position: relative;
+}
+
+
+.background-one{
+    position: absolute;
+    top:50%;
+    left:70%;
+    transform:scale(1.5);
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    animation: background-one 20s linear infinite;
+}
+
+@keyframes background-one{
+    0%{
+        top:50%;
+        left:65%;
+    }
+    20%{
+        top: 55%;
+        left:70% ;
+    }
+    40%{
+        top:50%;
+        left:75%;
+    }
+    60%{
+        top:55%;
+        left:70%;
+    }
+    80%{
+        top:60%;
+        left:65%;
+    }
+    100%{
+        top:50%;
+        left:70%;
+    }
+}
+
+
+
+.background-two{
+    position: absolute;
+    top:75%;
+    right:60%;
+    transform:scale(1.5);
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    height: 100vh;
+    animation: background-two 20s linear infinite;
+}
+@keyframes background-two{
+    0%{
+        top:75%;
+        right:60%;
+    }
+    20%{
+        top: 80%;
+        right:50% ;
+    }
+    40%{
+        top:70%;
+        right:55%;
+    }
+    60%{
+        top:75%;
+        right:45%;
+    }
+    80%{
+        top:70%;
+        right:55%;
+    }
+    100%{
+        top:75%;
+        right:60%;
+    }
+}
+
+.background-three{
+    position: absolute;
+    bottom:0%;
+    transform:scale(1.5);
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    left:80%;
+    height: 100vh;
+}
+
+
+
+.background-four{
+    position: absolute;
+    top:30%;
+    left:-20%;
+    transform:scale(1.5) ;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    height: 100vh;
+    animation: background-four 20s linear infinite;
+}
+
+@keyframes background-four{
+    0%{
+        top:30%;
+        left:-20%;
+    }
+    20%{
+        top: 35%;
+        left:-10% ;
+    }
+    40%{
+        top:30%;
+        left:-15%;
+    }
+    60%{
+        top:25%;
+        left:-10%;
+    }
+    80%{
+        top:35%;
+        left:-5%;
+    }
+    100%{
+        top:30%;
+        left:-20%;
+    }
+}
+
+#fullpage{
+    position:absolute;
+    width:100%;
+    background: url(./images/noise.webp);
+    background-size:4% 4%;
+    animation:backgroundSize 5s linear infinite;
+    z-index: 5;
+    pointer-events: none;
+}
+
+@keyframes backgroundSize {
+    0%{
+        background-size: 4% 4%;
+    }
+    50%{
+        background-size: 2% 2%;
+    }
+    100%{
+        background-size: 4% 4%;
+    }
 }
 
 
@@ -492,14 +655,13 @@ a{
 .about-content{
     width:100%;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .about-text-container{
-    position: absolute;
-    width: 70%;
-    right: 0%;
-    top:50%;
-    transform:translate(0%,-50%);
+    position: relative;
+    width: 80%;
     padding: 20px;
     margin:20px;
 }
@@ -747,30 +909,6 @@ a{
 
 }
 
-#fullpage{
-    position:absolute;
-    width:100%;
-    background: url(./images/noise.webp);
-    background-size:4% 4%;
-    animation:backgroundSize 5s linear infinite;
-    z-index: 5;
-    pointer-events: none;
-    /* overflow: hidden; */
-}
-
-@keyframes backgroundSize {
-    0%{
-        background-size: 4% 4%;
-    }
-    50%{
-        background-size: 2% 2%;
-    }
-    100%{
-        background-size: 4% 4%;
-    }
-}
-
-
 
 .service{
     padding:20px;
@@ -815,7 +953,7 @@ a{
     left:0;
     top:0;
     width:100%;
-    background: #050505;
+    background: transparent;
     height:100%;
 }
 
@@ -831,7 +969,6 @@ a{
     position: relative;
     width: 100%;
     height: auto;
-    min-height: 100vh;
 }
 
 .contact-flex{
@@ -894,7 +1031,7 @@ textarea{
     transition: all .4s ease;
 }
 #submit:hover{
-    background: #950101;
+    background: #1C0C5B;
     color: rgb(235, 235, 235);
 }
 form #message {
@@ -920,7 +1057,7 @@ form #message {
 #contact .highlight{
     padding: 0px 10px;
     color: rgb(235, 235, 235);
-    background: #950101;
+    background: #1C0C5B;
 }
 #contact .contact-info-content ul {
     color: rgb(235, 235, 235);
@@ -928,6 +1065,25 @@ form #message {
     display: flex;
     flex-direction: row;
 }
+
+#contact .contact-form-message{
+    position: fixed;
+    left:50%;
+    top:5%;
+    transform: translate(-50%,-5%);
+    width: auto;
+    background: rgb(235, 235, 235,.2);
+    border:1px solid rgb(235, 235, 235,1);
+    padding:20px;
+    border-radius: 4px;
+    font-family: poppins;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+    transition:all .4s ease;
+    white-space: nowrap;
+}
+
 
 /*======================================= CONTACT ============================================*/
 
@@ -1117,6 +1273,11 @@ font-family: made;
 
 @media all and (max-width: 675px) and (min-width: 0px){
 
+html{
+    overflow-x: hidden;
+    width:100%;
+}
+
 .cursor,.cursor-two{
     display: none;
 }
@@ -1239,12 +1400,12 @@ form{
     width:90%;
 }
 
+#contact .contact-form-message{
+    font-size: 13px;
 }
 
 
-
-
-
+}
 
 
 

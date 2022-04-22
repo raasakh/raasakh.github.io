@@ -1,8 +1,8 @@
-import * as THREE from './three.module.js'
+import * as THREE from "https://cdn.skypack.dev/three@0.128.0/build/three.module.js"
 
-import {GLTFLoader} from 'https://cdn.skypack.dev/three/examples/jsm/loaders/GLTFLoader.js'
+import {GLTFLoader} from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/loaders/GLTFLoader.js'
 
-import {RGBELoader} from 'https://cdn.skypack.dev/three/examples/jsm/loaders/RGBELoader.js'
+import {RGBELoader} from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/loaders/RGBELoader.js'
 
 
 
@@ -23,7 +23,6 @@ var green = [0x40916c,0x2d6a4f,0x40916c]
 var teal = [0x023047,0x219ebc,0x126782]
 var brown = [0xe76f51,0xf4a261,0xf4a261]
 var orange = [0xdb7c26,0xd8572a,0xe2711d]
-var violet = [0xce4257,0xce4257,0x720026]
 
 
 var dominant_color = red //Enter the Color name 
@@ -275,23 +274,12 @@ function initiate(){
 
 
 
-    if(window.innerWidth < 676){
-        camerax = 14.12;
-        cameray = -24.28;
-        cameraz = -85;
-        modelpositionx = -6.5;
-        basepositionx = -6.5;
-        shadowpositionx = -6.5;
-    }
-    else{
-        camerax = 14.12;
-        cameray = -18.28;
-        cameraz = -95;
-        modelpositionx = 38;
-        basepositionx = 38;
-        shadowpositionx = 38;
-
-    }
+    camerax = 14.12;
+    cameray = -24.28;
+    cameraz = -85;
+    modelpositionx = -6.5;
+    basepositionx = -6.5;
+    shadowpositionx = -6.5;
     
     
     function scrollAnimations(){
@@ -647,6 +635,10 @@ function initiate(){
                   }, success: function (response) {
                        $('form')[0].reset();
                        $('#submit').text("Sent!!!");
+                       $('.contact-form-message').css('opacity', '1');
+                       setTimeout(function(){
+                        $('.contact-form-message').css('opacity', '0');
+                        },4000)
                   }
                   
                });
@@ -830,10 +822,6 @@ function initiate(){
 const divheight = document.querySelector('.scroll-link').offsetHeight/5
 
 
-// gsap.set('.scroll-link',{
-//     height:divheight
-//    });
-
 gsap.set('.background-blur',{
     height:$(document).height()
 })
@@ -855,7 +843,7 @@ $(window).scroll(function() {
 // RELOAD THE PAGE ON WINDOW RESIZE
 
 if(window.innerWidth < 676){
-    //DO NOT RESIZE ON MOBILE DEVICES
+    
 }
 else{
     $(window).bind('resize', function(e)
@@ -893,3 +881,21 @@ new Swiper(' .mySwiper', {
     loop:true
   });
   // SLIDER ON GALLERY PAGE
+
+
+
+
+  const tilt = $('.tilt').tilt({
+    maxTilt:        2,
+     perspective:    80,   // Transform perspective, the lower the more extreme the tilt gets.
+     scale:          1,      // 2 = 200%, 1.5 = 150%, etc..
+     speed:          500,    // Speed of the enter/exit transition.
+     transition:     true,   // Set a transition on enter/exit.
+     disableAxis:    null,   // What axis should be disabled. Can be X or Y.
+     reset:          true,   // If the tilt effect has to be reset on exit.
+     glare:          false,  // Enables glare effect
+     maxGlare:       1       // From 0 - 1.
+});
+
+
+

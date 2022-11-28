@@ -1,0 +1,238 @@
+@media (min-width:768px) {
+    .hiden{
+       opacity: 0 ;
+        visibility: hidden;
+        
+    }
+    .shown{
+        opacity: 1;
+        visibility: visible;
+    }
+    nav{
+        -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        -webkit-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+        padding: 10px 0;
+        background: rgba(255, 255, 255, 0.95);
+        position: fixed;
+        z-index: 5;
+        left: 0;
+        right: 0;
+        top: 0;
+    }
+    .menu li{
+        text-align: center;
+        font-size: 18px;
+        display: inline-block;
+        width: 20%;
+        float: left;
+        border-left: 1px solid rgba(223, 35, 73, 0.2);
+        
+    }
+    .menu li a{
+        font-weight: 700;
+        display: inline-block;
+        color: #161616;
+        -webkit-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+    .menu li:hover a{
+        color: #df2349;
+    }
+    .menu li:last-child{
+        border-right: 1px solid #DF2349;
+    }
+}
+@media (max-width:767px){
+    .menu{
+        display: inline-block;
+        position: fixed;
+        right: 0;
+        top: 50%;
+        margin-top: -20px;
+        width: 40px;
+        height: 40px;
+        z-index: 5;
+        background: #df2349 url(../img/menu.svg) 50% no-repeat;
+
+        background-size: 20px;
+        border-radius: 50% 0 0 50%;
+        -webkit-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+    .menu.mshow{
+        padding-top: 60px;
+        top: 0;
+        margin-top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        background: #df2349 url(../img/close.svg) 50% 20px no-repeat;
+        background-size: 20px;
+    }
+    .menu li{
+        display: none;
+    }
+    .menu.mshow li{
+        margin-top: 10px;
+        text-align: center;
+        font-size: 18px;
+        display: inline-block;
+        width: 100%;
+
+        
+    }
+    .menu li a{
+        font-weight: 700;
+        display: inline-block;
+        color: #fff;
+        -webkit-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+    .menu li:hover a{
+        color: #df2349;
+    }
+
+}
+@media (max-width:767px) {
+    .s7p{
+            max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .s7p:after{
+        display: none;
+    }
+    .middle{
+        margin-top: 30px;
+    }
+    .content{
+        margin-top: 0;
+    }
+    header, .gal1 .slide{
+        /*height: 890px;*/
+        min-height: 1100px;
+    }
+    .contact{
+        margin-top: 10px;
+        text-align: center;
+    }
+        .contact a{
+        
+        font-size: 30px;
+    }
+    .contact a img{
+        margin-right: 10px;
+    }
+    .logo{
+        display: none;
+    }
+    .loc{
+        text-align: center;
+        max-width: 290px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+    }
+    .loc span{
+        
+        
+        font-size: 14px;
+    }
+    .loc span img{
+        margin-left: 10px;
+        float: none;
+    }
+    header h1{
+        line-height: 0.9;
+        margin-top: 30px;
+        font-size: 45px;
+    }
+    header h2{
+        font-size: 20px;
+  
+    }
+    header p{
+        font-size: 30px;
+        margin-bottom: 0;
+    }
+    #f1{
+        margin-top: 20px0;
+    }
+
+    .gal1{
+        height: 780px;
+    }
+    section h2{
+        font-size: 50px;
+    }
+    section h2 span{
+        margin-top: 10px;
+        font-size: 26px;
+    }
+    .sec6 figure{
+        margin-bottom: 30px;
+    }
+    #map{
+        position: relative;
+        height: 300px;
+    }
+    .mesto{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+    header, .gal1 .slide{
+        /*height: 690px;*/
+    }
+    .contact span{
+        font-size: 16px;
+    }
+    .contact a{
+        
+        font-size: 28px;
+    }
+    .contact a img{
+        display: none;
+    }
+    .loc span{
+        font-size: 16px;
+    }
+    header h1{
+        font-size: 42px
+    }
+    header h2{
+        font-size: 26px;
+    }
+    .sec6 figure{
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+    }
+}
+
+@media (min-width:992px) and (max-width:1199px) {
+    .contact{
+        margin-top: 30px;
+    }
+.contact a{
+    font-size: 30px;
+}
+    header h1{
+        font-size: 54px;
+    }
+    .sec2 ul li{
+        width: 250px;
+    }
+}
+
+
+
